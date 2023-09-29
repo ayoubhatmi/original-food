@@ -1,0 +1,25 @@
+@use "../scss/index" as *;
+
+.SideBar {
+  position: sticky;
+  top: 0;
+  padding: 1rem 2rem 0 0;
+  width: 300px;
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .item {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

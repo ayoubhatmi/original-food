@@ -1,0 +1,22 @@
+@use "../scss/index" as *;
+
+.Menu {
+  @extend .center-vertically;
+
+  .header {
+    font-size: 3rem;
+    color: #000000;
+    margin: 2rem 0;
+  }
+
+  .sidebar {
+    @include breakpoints(mobile) {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    padding: 0 1rem;
+  }
+}

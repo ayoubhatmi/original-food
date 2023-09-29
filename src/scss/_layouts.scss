@@ -1,0 +1,7 @@
+// Content will be centered vertically
+.center-vertically {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

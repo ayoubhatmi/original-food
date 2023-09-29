@@ -1,0 +1,13 @@
+@use "../scss/index" as *;
+
+.ArticleCard {
+  padding: 1rem;
+  width: 280px;
+  height: 260px;
+
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    transform: scale(1, 1);
+    cursor: pointer;
+  }
+}

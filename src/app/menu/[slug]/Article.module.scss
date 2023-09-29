@@ -1,0 +1,104 @@
+@use "../../../scss/index" as *;
+
+.Article {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+
+  .image {
+    position: sticky;
+    top: 1rem;
+    object-fit: cover;
+    @include breakpoints(mobile) {
+      position: relative;
+      top: auto;
+      // to do adjust position
+    }
+  }
+
+  .content {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .price {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .description {
+    color: #545454;
+    margin: 0.5rem 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .listHeader {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 0.25rem 0;
+  }
+
+  .listDescription {
+    font-size: 0.875rem;
+    color: #545454;
+  }
+
+  .inputbox {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  .itemPrice {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .checkbox {
+    width: 20px;
+  }
+  .radio {
+    width: 18px;
+  }
+
+  textarea {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    height: 130px;
+  }
+
+  select {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #ff9000;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,12 @@
+@use "../scss/index" as *;
+.Category {
+  margin-top: 1rem;
+
+  .articles {
+    display: flex;
+    margin-top: 1rem;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

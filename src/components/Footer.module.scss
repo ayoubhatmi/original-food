@@ -1,0 +1,65 @@
+@use "../scss/index" as *;
+
+.Footer {
+  @extend .center-vertically;
+  margin-top: -1rem;
+  color: $white;
+  background-color: #ff9000;
+  padding: 1rem 2rem;
+  .listContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 0;
+    max-width: 1080px;
+    gap: 1rem;
+    @include breakpoints(mobile) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .listHeader {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .subheader {
+    font-weight: 600;
+  }
+
+  .listItem {
+    // margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .ic {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+
+  .copyright {
+    margin-bottom: 0.5rem;
+    color: $white;
+    // font-size: 0.75rem;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
