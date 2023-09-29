@@ -7,12 +7,14 @@ const SupplementsChooser = ({
   onSupplementsPriceChange,
 }) => {
   const handleSupplements = (e) => {
-    const { value, checked } = e.target;
-    if (checked) {
-      setSupplements([...supplements, value]);
+    if (e.target.checked) {
+      setSupplements([
+        ...supplements,
+        { name: e.target.value, price: parseInt(e.target.dataset.price) },
+      ]);
     } else {
       setSupplements((supplements) =>
-        supplements.filter((item) => item !== value)
+        supplements.filter((item) => item.name !== e.target.value)
       );
     }
   };
@@ -20,21 +22,11 @@ const SupplementsChooser = ({
   const calculateSupplementsPrice = () => {
     let totalPrice = 0;
 
-    for (const selectedSupplement of supplements) {
-      // Find the selected supplement in the data array
-      const supplement = data.supplements.find(
-        (item) => item.name === selectedSupplement
-      );
-
-      if (supplement) {
-        // Add the price of the selected supplement to the total
-        totalPrice += supplement.price;
-      }
-    }
+    supplements.forEach((item) => {
+      totalPrice += item.price;
+    });
 
     onSupplementsPriceChange(totalPrice);
-
-    return totalPrice;
   };
 
   calculateSupplementsPrice();
@@ -56,6 +48,7 @@ const SupplementsChooser = ({
               id={supplement.name}
               name={supplement.name}
               value={supplement.name}
+              data-price={supplement.price}
               onChange={handleSupplements}
             />
           </li>

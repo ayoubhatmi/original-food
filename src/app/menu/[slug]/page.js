@@ -34,7 +34,12 @@ const Article = ({ params: { slug } }) => {
   const [quantity, setQuantity] = useState(1);
 
   // Handle supplements and their price.
-  const [supplements, setSupplements] = useState([]);
+  const [supplements, setSupplements] = useState([
+    {
+      name: "",
+      price: 0,
+    },
+  ]);
   const [supplementsPrice, setSupplementsPrice] = useState(0);
   const handleSupplementsPriceChange = (newSupplementsPrice) => {
     setSupplementsPrice(newSupplementsPrice);
@@ -116,6 +121,7 @@ const Article = ({ params: { slug } }) => {
           )}
 
           {article.boissons && <BoissonChooser setBoisson={setBoisson} />}
+
           {article.supplements && (
             <SupplementsChooser
               supplements={supplements}
@@ -123,7 +129,6 @@ const Article = ({ params: { slug } }) => {
               onSupplementsPriceChange={handleSupplementsPriceChange}
             />
           )}
-
           <Instructions setComment={setComment} />
           <QuantityChooser setQuantity={setQuantity} />
 
