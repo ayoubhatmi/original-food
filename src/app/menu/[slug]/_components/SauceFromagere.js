@@ -1,4 +1,4 @@
-import styles from "../app/menu/[slug]/Article.module.scss";
+import styles from "../Article.module.scss";
 import { data } from "@/utils/data";
 
 const SauceFromagere = ({ setSauceFromagere }) => {

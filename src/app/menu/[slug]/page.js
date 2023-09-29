@@ -6,27 +6,32 @@ import { data } from "../../../utils/data";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/redux/slices/cartSlice";
-import SupplementsChooser from "@/components/SupplementsChooser";
-import BoissonChooser from "@/components/BoissonChooser";
-import SeulOuMenuChooser from "@/components/SeulOuMenuChooser";
-import SauceFromagere from "@/components/SauceFromagere";
-import ViandesChooser from "@/components/ViandesChooser";
-import Sauces from "@/components/Sauces";
-import NbPiecesChooser from "@/components/NbPiecesChooser";
+import BoissonChooser from "./_components/BoissonChooser";
+import SeulOuMenuChooser from "./_components/SeulOuMenuChooser";
+import SauceFromagere from "./_components/SauceFromagere";
+import ViandesChooser from "./_components/ViandesChooser";
+import Sauces from "./_components/SaucesChooser";
+import NbPiecesChooser from "./_components/NbPiecesChooser";
+import SupplementsChooser from "./_components/SupplementsChooser";
+import QuantityChooser from "./_components/QuantityChooser";
+import Instructions from "./_components/Instructions";
 
 const Article = ({ params: { slug } }) => {
   const article = data.articles.find((article) => article.slug === slug);
 
   // const { cartItems } = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [sauces, setSauces] = useState([]);
   const [viandes, setViandes] = useState([]);
   const [sauceFromagere, setSauceFromagere] = useState("");
-  const [seulOuMenu, setSeulOuMenu] = useState("");
+  const [seulOuMenu, setSeulOuMenu] = useState({
+    name: "Seul",
+    price: 0,
+  });
   const [boisson, setBoisson] = useState("");
-
-  const [nbPieces, setNbPieces] = useState();
+  const [nbPieces, setNbPieces] = useState({ nb: 0, price: 0 });
+  const [quantity, setQuantity] = useState(1);
 
   // Handle supplements and their price.
   const [supplements, setSupplements] = useState([]);
@@ -37,29 +42,19 @@ const Article = ({ params: { slug } }) => {
 
   //Specific instructions
   const [comment, setComment] = useState("");
-  const handleComment = (e) => {
-    setComment(e.target.value);
-  };
-
-  //Quantité
-  const [quantity, setQuantity] = useState(1);
-  const handleQuantity = (e) => {
-    setQuantity(parseInt(e.target.value));
-  };
 
   //TotalPrice
   const [totalPrice, setTotalPrice] = useState(0);
+  const handleTotalPrice = () => {
+    let total =
+      (article.price + supplementsPrice + seulOuMenu.price + nbPieces.price) *
+      quantity;
+    setTotalPrice(total);
+  };
 
   // CartItems
-  const [cartItem, setCartItem] = useState({ name: article.name });
-  useEffect(() => {
-    let total = 0;
-    if (seulOuMenu === "menu") {
-      total += 2.9;
-    }
-
-    total += (article.price + supplementsPrice) * quantity;
-    setTotalPrice(total);
+  const [cartItem, setCartItem] = useState({});
+  const handleCartItem = () => {
     setCartItem({
       name: article.name,
       sauces: article.sauces ? sauces : null,
@@ -68,11 +63,16 @@ const Article = ({ params: { slug } }) => {
       seulOuMenu: article.seulOuMenu ? seulOuMenu : null,
       boisson: article.boissons ? boisson : null,
       supplements: article.supplements ? supplements : null,
+      nbPieces: article.nbPieces ? nbPieces : null,
       comment: comment,
       quantity: quantity,
-      price: 100,
+      price: totalPrice,
     });
-  }, [quantity, supplementsPrice, seulOuMenu]);
+  };
+
+  useEffect(() => {
+    handleTotalPrice();
+  }, [quantity, supplementsPrice, seulOuMenu, nbPieces]);
 
   return (
     <div className={styles.Article}>
@@ -89,66 +89,43 @@ const Article = ({ params: { slug } }) => {
         <p className={styles.description}>{article.description}</p>
 
         <form>
-          {article.nbPieces ? (
-            <NbPiecesChooser setNbPieces={setNbPieces} />
-          ) : null}
+          {article.pieces && (
+            <NbPiecesChooser setNbPieces={setNbPieces} article={article} />
+          )}
 
-          {article.sauces ? (
-            <Sauces sauces={sauces} setSauces={setSauces} />
-          ) : null}
+          {article.sauces && <Sauces sauces={sauces} setSauces={setSauces} />}
 
-          {article.nbViandes ? (
+          {article.nbViandes && (
             <ViandesChooser
               viandes={viandes}
               setViandes={setViandes}
               article={article}
             />
-          ) : null}
+          )}
 
-          {article.sauceFromagere ? (
+          {article.sauceFromagere && (
             <SauceFromagere setSauceFromagere={setSauceFromagere} />
-          ) : null}
+          )}
 
-          {article.seulOuMenu ? (
+          {article.seulOuMenu && (
             <SeulOuMenuChooser setSeulOuMenu={setSeulOuMenu} />
-          ) : null}
+          )}
 
-          {article.seulOuMenu && seulOuMenu === "menu" ? (
+          {article.seulOuMenu && seulOuMenu.name === "Menu" && (
             <BoissonChooser setBoisson={setBoisson} />
-          ) : null}
+          )}
 
-          {article.boissons ? <BoissonChooser setBoisson={setBoisson} /> : null}
-          {article.supplements ? (
+          {article.boissons && <BoissonChooser setBoisson={setBoisson} />}
+          {article.supplements && (
             <SupplementsChooser
               supplements={supplements}
               setSupplements={setSupplements}
               onSupplementsPriceChange={handleSupplementsPriceChange}
             />
-          ) : null}
+          )}
 
-          {/* Comment */}
-          <h2 className={styles.listHeader}>Instructions spécifiques</h2>
-          <textarea
-            cols="30"
-            rows="10"
-            name="message"
-            placeholder="Ajouter un commentaire"
-            onChange={handleComment}
-          />
-          <p className={styles.listDescription}>
-            Des frais peuvent s'appliquer aux suppléments.
-          </p>
-
-          {/* Quantité */}
-          <div className={styles.select}>
-            <select onChange={handleQuantity}>
-              {[...Array(98)].map((_, index) => (
-                <option key={index + 1} value={index + 1}>
-                  {index + 1}
-                </option>
-              ))}
-            </select>
-          </div>
+          <Instructions setComment={setComment} />
+          <QuantityChooser setQuantity={setQuantity} />
 
           <button
             className={styles.btn}

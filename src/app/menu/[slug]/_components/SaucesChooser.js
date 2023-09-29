@@ -1,7 +1,7 @@
-import styles from "../app/menu/[slug]/Article.module.scss";
+import styles from "../Article.module.scss";
 import { data } from "@/utils/data";
 
-const Sauces = ({ sauces, setSauces }) => {
+const SaucesChooser = ({ sauces, setSauces }) => {
   const handleSauces = (event) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -35,4 +35,4 @@ const Sauces = ({ sauces, setSauces }) => {
   );
 };
 
-export default Sauces;
+export default SaucesChooser;

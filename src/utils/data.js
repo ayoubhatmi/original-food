@@ -34,13 +34,6 @@ export const data = {
     { name: "Bacon", price: 2.0 },
   ],
 
-  nbPieces: [
-    { nb: 4, price: 0.0 },
-    { nb: 6, price: 4 },
-    { nb: 8, price: 3.7 },
-    { nb: 12, price: 6.7 },
-  ],
-
   boissons: [
     "Coca-Cola",
     "Coca-Cola Zero",
@@ -67,6 +60,11 @@ export const data = {
   ],
 
   saucesFromagere: ["Sans sauce", "Peu de sauce", "Avec sauce"],
+
+  seulOuMenu: [
+    { name: "Seul", price: 0 },
+    { name: "Menu", price: 2.9 },
+  ],
 
   viandes: [
     "Escalope de poulet",
@@ -362,7 +360,11 @@ export const data = {
       supplements: false,
       sauceFromagere: false,
       seulOuMenu: false,
-      nbPieces: true,
+      pieces: [
+        { nb: 4, price: 0.0 },
+        { nb: 8, price: 3.7 },
+        { nb: 12, price: 6.7 },
+      ],
     },
     {
       id: "21",
@@ -372,10 +374,6 @@ export const data = {
       price: 3.5,
       image: "/images/frites.jpeg",
       description: "Frites croustillantes.",
-      boissons: false,
-      supplements: false,
-      sauceFromagere: false,
-      seulOuMenu: false,
     },
     {
       id: "22",
@@ -403,7 +401,10 @@ export const data = {
       supplements: false,
       sauceFromagere: false,
       seulOuMenu: false,
-      nbPieces: [{ nb: 3, price: "", nb: 6, price: 4 }],
+      pieces: [
+        { nb: 3, price: 0.0 },
+        { nb: 6, price: 4 },
+      ],
     },
 
     {
