@@ -4,8 +4,8 @@ import styles from "./Article.module.scss";
 import Image from "next/image";
 import { data } from "../../../utils/data";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "@/redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/slices/cartSlice";
 import BoissonChooser from "./_components/BoissonChooser";
 import SeulOuMenuChooser from "./_components/SeulOuMenuChooser";
 import SauceFromagere from "./_components/SauceFromagere";
@@ -91,6 +91,7 @@ const Article = ({ params: { slug } }) => {
           <Image
             className={styles.image}
             src={article.image}
+            alt={article.slug}
             width={492}
             height={492}
           />

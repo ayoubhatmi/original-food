@@ -14,7 +14,7 @@ const Hero = () => {
     <section className={styles.hero}>
       <header className={styles.header}>
         <Link href="/" className={styles.logo}>
-          L'original Food
+          L&apos;original Food
         </Link>
         <div className={styles.navContainer}>
           <Link className={styles.btn} href="/">
@@ -41,9 +41,9 @@ const Hero = () => {
         }}
       ></Image>
       <div className={styles.container}>
-        <h1 className={styles.title}>L'original Food</h1>
+        <h1 className={styles.title}>L&apos;original Food</h1>
         <p className={styles.slogan}>
-          Soyez original, mangez original avec L'Original Food!
+          Soyez original, mangez original avec L&apos;Original Food!
         </p>
         <Link className={styles.cta} href="#menu">
           Voir le Menu

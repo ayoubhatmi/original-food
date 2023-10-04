@@ -40,7 +40,12 @@ const Cart = () => {
       <div className={styles.Cart}>
         {cartItems.length === 0 ? (
           <div className={styles.emptyCart}>
-            <Image src={emptyCartImg} width={380} height={380} />
+            <Image
+              src={emptyCartImg}
+              width={380}
+              height={380}
+              alt="empty-card"
+            />
             <p>Votre panier est actuellement vide.</p>
             <Link href="/#menu" className={styles.cta}>
               Commandez maintenant !

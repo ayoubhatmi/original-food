@@ -38,7 +38,7 @@ const Footer = () => {
           </ul>
 
           <ul className={styles.list}>
-            <li className={styles.listHeader}>Horaires d'ouvertures</li>
+            <li className={styles.listHeader}>Horaires d&apos;ouvertures</li>
             <li className={styles.subheader}>Dimanche - Jeudi </li>
             <li>11:30 - 14:30 18:00 - 23:00</li>
             <li>18:00 - 23:00</li>
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         <p className={styles.copyright}>
-          L'original Food | tous droits réservés © 2024
+          L&apos;original Food | tous droits réservés © 2024
         </p>
       </div>
     </div>
