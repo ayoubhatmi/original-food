@@ -8,6 +8,10 @@
     color: #000000;
     margin: 2rem 0;
     text-align: center;
+
+    @include breakpoints(mobile) {
+      font-size: 2rem;
+    }
   }
 
   .sidebar {

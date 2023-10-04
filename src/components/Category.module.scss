@@ -2,11 +2,20 @@
 .Category {
   margin-top: 1rem;
 
+  .title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
   .articles {
     display: flex;
     margin-top: 1rem;
     list-style: none;
     flex-wrap: wrap;
     gap: 1rem;
+
+    @include breakpoints(mobile) {
+      justify-content: center;
+    }
   }
 }

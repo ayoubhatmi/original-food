@@ -51,6 +51,9 @@
 
   .title {
     font-size: 4rem;
+    @include breakpoints(mobile) {
+      margin-top: -5rem;
+    }
   }
 
   .container {
