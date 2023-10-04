@@ -4,7 +4,9 @@
 
   .title {
     font-size: 1.75rem;
-    text-align: center;
+    @include breakpoints(mobile) {
+      text-align: center;
+    }
   }
 
   .articles {

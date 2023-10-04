@@ -11,7 +11,9 @@
   .imageContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    @include breakpoints(mobile) {
+      width: 100%;
+    }
   }
 
   .image {
