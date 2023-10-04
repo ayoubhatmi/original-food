@@ -2,7 +2,6 @@ import styles from "./Infos.module.scss";
 import { MdDeliveryDining, MdFastfood } from "react-icons/md";
 import { IoFastFood } from "react-icons/io5";
 import { BiSolidDish } from "react-icons/bi";
-import packingImg from "../../public/images/packing.png";
 
 const Infos = () => {
   return (

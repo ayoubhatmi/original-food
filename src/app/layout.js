@@ -1,5 +1,3 @@
-"use client";
-
 import "./globals.css";
 import { Karla } from "next/font/google";
 import Footer from "@/components/Footer";
