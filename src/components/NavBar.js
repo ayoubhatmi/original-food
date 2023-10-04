@@ -11,7 +11,7 @@ const NavBar = () => {
     <header className={styles.NavBar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          L'original Food
+          L&apos;original Food
         </Link>
         <div className={styles.navContainer}>
           <Link className={styles.btn} href="/">

@@ -33,7 +33,7 @@ const Hero = () => {
       <Image
         className={styles.heroImg}
         src={heroImg}
-        alt="L'original Food"
+        alt="Loriginal Food"
         fill
         style={{
           objectFit: "cover",

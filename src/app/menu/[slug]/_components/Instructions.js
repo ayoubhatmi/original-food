@@ -16,7 +16,7 @@ const Instructions = ({ setComment }) => {
         onChange={handleComment}
       />
       <p className={styles.listDescription}>
-        Des frais peuvent s'appliquer aux suppléments.
+        Des frais peuvent s&apos;appliquer aux suppléments.
       </p>
     </>
   );
