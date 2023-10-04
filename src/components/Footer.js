@@ -17,10 +17,10 @@ const Footer = () => {
           <ul className={styles.list}>
             <li className={styles.listHeader}>Liens Rapides</li>
             <li className={styles.listItem}>
-              <Link href={"/"}>Menu</Link>
+              <Link href={"/#menu"}>Menu</Link>
             </li>
             <li className={styles.listItem}>
-              <Link href={"/"}>Commander</Link>
+              <Link href={"/#menu"}>Commander</Link>
             </li>
           </ul>
           <ul className={styles.list}>

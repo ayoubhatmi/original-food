@@ -1,0 +1,108 @@
+@use "../../scss/index" as *;
+
+.Cart {
+  @extend .center-vertically;
+  padding: 1rem;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 2rem;
+  }
+
+  .cartItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #d3d3d3;
+    .item {
+      flex-basis: 40%;
+      flex-grow: 1;
+    }
+    .itemPrice {
+      flex-basis: 40%;
+      flex-grow: 1;
+    }
+
+    .deleteIc {
+      cursor: pointer;
+    }
+  }
+
+  .total {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    @include breakpoints(mobile) {
+      width: 100%;
+    }
+  }
+
+  .cartItems {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    width: 50%;
+    @include breakpoints(mobile) {
+      width: 100%;
+    }
+  }
+
+  .totalContainer {
+    @include breakpoints(mobile) {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #ff9000;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  .priceContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .deleteIc {
+    cursor: pointer;
+  }
+
+  .emptyCart {
+    @extend .center-vertically;
+    margin-top: 3rem;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+
+    .cta {
+      color: #ff9000;
+      font-weight: 500;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

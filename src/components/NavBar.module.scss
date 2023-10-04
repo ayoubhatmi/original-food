@@ -1,0 +1,63 @@
+@use "../scss/index" as *;
+
+.NavBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.75rem 1rem;
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .navContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+
+    .cart {
+      display: flex;
+
+      .cartIc {
+        color: #1f1e1e;
+        font-size: 2.25rem;
+      }
+
+      .Quantity {
+        color: #fff;
+        width: 16px;
+        height: 16px;
+        background-color: #ff9000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -8px;
+        font-size: 1rem;
+      }
+    }
+
+    .btn {
+      font-size: 1rem;
+      color: #fff;
+      padding: 0.6rem;
+      background-color: #ff9000;
+      border: none;
+      border-radius: 45px;
+      outline: none;
+      &:hover {
+        background-color: #dc7e02;
+      }
+    }
+  }
+}

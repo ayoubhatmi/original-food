@@ -7,8 +7,8 @@ import { data } from "@/utils/data";
 
 const Menu = () => {
   return (
-    <div className={styles.Menu}>
-      <h2 className={styles.header}>Notre carte 🍽️</h2>
+    <div className={styles.Menu} id="menu">
+      <h2 className={styles.header}>Découvrez Notre Carte 🍽️</h2>
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <SideBar />

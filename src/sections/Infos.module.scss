@@ -1,0 +1,38 @@
+@use "../scss/index" as *;
+
+.Infos {
+  padding: 5rem 1rem;
+  @extend .center-vertically;
+
+  .warpper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    gap: 3rem;
+  }
+
+  .container {
+    @extend .center-vertically;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    .icon {
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 5rem;
+      width: 5rem;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      padding: 1rem;
+      background-color: #ff9000;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

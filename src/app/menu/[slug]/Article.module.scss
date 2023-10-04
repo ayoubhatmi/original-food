@@ -8,14 +8,31 @@
   gap: 2rem;
   padding: 2rem;
 
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
   .image {
     position: sticky;
-    top: 1rem;
+    top: 5rem;
     object-fit: cover;
     @include breakpoints(mobile) {
       position: relative;
       top: auto;
-      // to do adjust position
+    }
+  }
+
+  .link {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    .arrowIc {
+      margin-right: 0.5rem;
     }
   }
 
