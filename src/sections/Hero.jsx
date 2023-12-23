@@ -6,6 +6,7 @@ import heroImg from "../../public/images/hero-img.jpg";
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import logo from "../../public/images/logo.png"
 
 const Hero = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -13,9 +14,8 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <header className={styles.header}>
-        <Link href="/" className={styles.logo}>
-          L&apos;original Food
-        </Link>
+        <Link href="/">
+<Image src={logo}  className={styles.logo} alt="L'original Food"/>        </Link>
         <div className={styles.navContainer}>
           <Link className={styles.btn} href="/">
             Se connecter

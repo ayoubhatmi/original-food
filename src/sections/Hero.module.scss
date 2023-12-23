@@ -12,12 +12,16 @@
     justify-content: space-between;
     padding: 1.75rem 1rem;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1100px;
 
     .logo {
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 600;
+ width: 200px;
+ height: 110px;
+
+ @include breakpoints(mobile) { width:150px;
+ height:70px;
+     }
+
     }
 
     .navContainer {
